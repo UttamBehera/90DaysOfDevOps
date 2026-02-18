@@ -50,6 +50,109 @@ Result:
    These are used for literal strings. they tell the shell: "Take everything inside here exactly as it is written. Do not change any thing."
 
    > result: echo 'Hi $name' prints Hi $name.
+
+
+**Task :- 3**
+
+Code:
+
+#!/bin/bash
+
+
+echo "Enter your name: "
+
+read name
+
+echo "Enter favorite tool: "
+
+read tool
+
+echo " Hello $name, your favorite toll is $tool."
+
+Input :
+
+name : Uttam
+tool : Docker
+
+Result : 
+
+Hello Uttam, your favorite toll is Docker.
+
+**Task :- 4**
+
+1-->
+
+#!/bin/bash
+
+echo "Enter a Number: "
+read num
+
+if [ $num -gt 0 ]
+
+then
+        echo "Number is enter by you is Positive"
+
+elif [ $num -lt 0 ]
+
+then
+        echo "Number is enter by you is negative"
+else
+
+   echo "Number is enter by you is zero"
+
+fi
+
+2-->
+
+#!/bin/bash
+
+
+read -p "Enter file name"  file_name
+
+
+if [ -f "$file_name" ]
+
+then
+        echo "File is exist...."
+
+else
+        echo "File doesn't exist!!!"
+
+fi
+
+
+**Task :- 5**
+
+#!/bin/bash
+
+
+read -p "Enter ther service name: " service
+
+
+read -p "Do you want to check the $service status(y/n) ?" choice
+
+
+if [ "$choice" = "y" ]
+
+then
+        systemctl is-active --quiet $service
+
+         if [ $? -eq 0 ]
+
+        then
+                echo "$service is Active "
+        else
+                echo "$sevice is not running"
+        fi
+else
+        echo "skipped.."
+
+fi
+
+
+
+
+   
    
 
 
